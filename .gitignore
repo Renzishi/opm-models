@@ -25,6 +25,9 @@ doc/doxygen/html
 # from some simulation results
 *.csv
 
+# Build directory in source.
+build/
+
 # latex clutter from dumux handbook 
 *.pdf
 *.aux
