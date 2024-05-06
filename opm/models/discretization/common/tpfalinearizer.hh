@@ -644,7 +644,8 @@ public:
     void updateFlowsInfo() {
         OPM_TIMEBLOCK(updateFlows);
         const bool& enableFlows = simulator_().problem().eclWriter()->outputModule().hasFlows() ||
-                                    simulator_().problem().eclWriter()->outputModule().hasBlockFlows();
+                                    simulator_().problem().eclWriter()->outputModule().hasBlockFlows()
+                                    || simulator_().vanguard().eclState().getTableManager().useTransmis();
         const bool& enableFlores = simulator_().problem().eclWriter()->outputModule().hasFlores();
         if (!enableFlows && !enableFlores) {
             return;
